@@ -1,8 +1,9 @@
 package response
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type ResponseData struct {
@@ -24,8 +25,7 @@ type ListResponseData struct {
 	Size int64  `json:"size"`
 }
 
-type Response struct {
-}
+type Response struct{}
 
 func (r *Response) SuccessResponse(ctx *gin.Context, data interface{}) {
 	ctx.JSON(http.StatusOK, ResponseData{

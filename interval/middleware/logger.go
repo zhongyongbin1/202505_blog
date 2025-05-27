@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"context"
+
 	"gin-blog-newest/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
@@ -9,7 +10,6 @@ import (
 
 type LoggerMiddleware struct {
 	// 这里可以添加一些日志相关的配置
-
 }
 
 func ApiLogger() gin.HandlerFunc {

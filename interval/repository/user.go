@@ -40,6 +40,7 @@ func (u UserRepositoryImpl) FindByUsername(username string) (*model.User, error)
 func (u UserRepositoryImpl) FindByEmail(email string) (*model.User, error) {
 	var user model.User
 	err := u.DB.Where("email =?", email).First(&user).Error
+	u.log.Info().Msg("find user by email")
 	return &user, err
 }
 

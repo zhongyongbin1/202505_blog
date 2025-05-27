@@ -15,8 +15,8 @@ func InitRouter(r *gin.Engine, db *gorm.DB, log *logger.Logger) {
 		// 初始化user路由
 		InitUserRouter(api, db, log)
 	}
-
 }
+
 func InitUserRouter(api *gin.RouterGroup, db *gorm.DB, log *logger.Logger) {
 	userRepo := repository.NewUserRepository(db, log)
 	userService := service.NewUserService(userRepo, log)

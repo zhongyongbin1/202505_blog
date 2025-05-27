@@ -100,6 +100,7 @@ func (l *Logger) WithFields(fields map[string]interface{}) *Logger {
 	newLogger := Logger{&zerologLogger}
 	return &newLogger
 }
+
 func (l *Logger) WithContext(ctx context.Context) context.Context {
 	return context.WithValue(ctx, loggerCtxKey, l)
 }

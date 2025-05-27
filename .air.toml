@@ -1,0 +1,38 @@
+# Air配置文件
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# 构建命令
+cmd = "go build -o ./tmp/main ./cmd/main.go"
+# 生成的二进制文件
+bin = "tmp/main"
+# 自定义运行命令
+full_bin = "./tmp/main"
+# 监听的文件扩展名
+include_ext = ["go", "tpl", "tmpl", "html", "yaml", "yml"]
+# 忽略的目录
+exclude_dir = ["assets", "tmp", "vendor", ".git", ".idea"]
+# 忽略的文件
+exclude_file = []
+# 延迟时间
+delay = 1000 # ms
+# 构建错误时停止运行旧的二进制文件
+stop_on_error = true
+# air的日志文件
+log = "air_errors.log"
+
+[log]
+# 显示日志时间
+time = true
+
+[color]
+# 自定义颜色
+main = "magenta"
+watcher = "cyan"
+build = "yellow"
+runner = "green"
+
+[misc]
+# 退出时删除tmp目录
+clean_on_exit = true

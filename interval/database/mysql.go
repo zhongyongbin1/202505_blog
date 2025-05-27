@@ -2,6 +2,7 @@ package database
 
 import (
 	"fmt"
+
 	"gin-blog-newest/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

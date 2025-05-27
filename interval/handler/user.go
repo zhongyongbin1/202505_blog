@@ -1,11 +1,12 @@
 package handler
 
 import (
+	"net/http"
+
 	"gin-blog-newest/interval/model"
 	"gin-blog-newest/interval/service"
 	"gin-blog-newest/pkg/logger"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 type UserHandler interface {
@@ -40,6 +41,7 @@ func (h *UserHandlerImpl) GetByUsername(ctx *gin.Context) {
 	}
 	h.response.SuccessResponse(ctx, user)
 }
+
 func (h *UserHandlerImpl) GetByEmail(ctx *gin.Context) {
 	email := ctx.Param("email")
 	user, err := h.us.FindByEmail(email)
@@ -49,6 +51,7 @@ func (h *UserHandlerImpl) GetByEmail(ctx *gin.Context) {
 	}
 	h.response.SuccessResponse(ctx, user)
 }
+
 func (h *UserHandlerImpl) GetByPhone(ctx *gin.Context) {
 	phone := ctx.Param("phone")
 	user, err := h.us.FindByPhone(phone)
@@ -57,5 +60,4 @@ func (h *UserHandlerImpl) GetByPhone(ctx *gin.Context) {
 		return
 	}
 	h.response.SuccessResponse(ctx, user)
-
 }

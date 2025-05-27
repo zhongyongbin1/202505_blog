@@ -24,18 +24,23 @@ func NewBaseService[T any](baseRepository repository.BaseRepository[T], logger *
 		log:            logger,
 	}
 }
+
 func (b *BaseServiceImpl[T]) Create(data *T) error {
 	return b.BaseRepository.Create(data)
 }
+
 func (b *BaseServiceImpl[T]) Update(data *T) error {
 	return b.BaseRepository.Update(data)
 }
+
 func (b *BaseServiceImpl[T]) Delete(id int64) error {
 	return b.BaseRepository.Delete(id)
 }
+
 func (b *BaseServiceImpl[T]) FindByID(id int64) (*T, error) {
 	return b.BaseRepository.FindByID(id)
 }
+
 func (b *BaseServiceImpl[T]) FindAll() ([]*T, error) {
 	return b.BaseRepository.FindAll()
 }

@@ -1,13 +1,14 @@
 package handler
 
 import (
+	"net/http"
+	"strconv"
+
 	"gin-blog-newest/interval/model"
 	"gin-blog-newest/interval/service"
 	"gin-blog-newest/pkg/logger"
 	"gin-blog-newest/pkg/response"
 	"github.com/gin-gonic/gin"
-	"net/http"
-	"strconv"
 )
 
 type BaseHandler[T any] interface {
@@ -52,6 +53,7 @@ func (h *BaseHandlerImpl[T]) Update(ctx *gin.Context) {
 		return
 	}
 }
+
 func (h *BaseHandlerImpl[T]) Delete(ctx *gin.Context) {
 	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 64)
 	if err := h.BaseService.Delete(id); err != nil {

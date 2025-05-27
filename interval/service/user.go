@@ -41,7 +41,6 @@ func (u *UserServiceImpl) FindByEmail(email string) (*model.User, error) {
 	user, err := u.UserRepository.FindByEmail(email)
 	if err != nil {
 		return nil, err
-
 	}
 	return user, nil
 }
