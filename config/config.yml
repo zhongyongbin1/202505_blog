@@ -1,0 +1,12 @@
+# config.yaml
+server:
+  port: 8080
+logger:
+  level: debug
+database:
+  host: 127.0.0.1
+  port: 33061
+  user: root
+  password: streamline
+  dbname: blog
+  driver: mysql
